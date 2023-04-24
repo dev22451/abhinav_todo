@@ -13,7 +13,6 @@ function App() {
       <Heading />
       <List />
       <Sectionlist />
-
       <TodoForm />
     </ScrollView>
   );
