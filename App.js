@@ -1,6 +1,4 @@
 import React from "react";
-
-import { ScrollView } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
@@ -13,8 +11,11 @@ const Stack = createNativeStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="Heading">
         <Stack.Screen name="Heading" component={Heading} />
+        <Stack.Screen name="List" component={List} />
+        <Stack.Screen name="SectionList" component={Sectionlist} />
+        <Stack.Screen name="TodoForm" component={TodoForm} />
       </Stack.Navigator>
     </NavigationContainer>
   );

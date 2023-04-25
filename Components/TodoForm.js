@@ -6,14 +6,16 @@ import {
   TextInput,
   TouchableOpacity,
   View,
+  ScrollView,
 } from "react-native";
+
 
 function TodoForm() {
   const [todo, setTodo] = useState("");
   const [todos, setTodos] = useState([]);
 
   const handleAddTask = () => {
-    if (todo == "") {
+    if (todo.trim() == "") {
       Alert.alert("Please fill todo");
     } else {
       setTodos(() => [...todos, { id: Math.random(), todo: todo }]);
@@ -26,6 +28,7 @@ function TodoForm() {
   };
 
   return (
+    <ScrollView>
     <View style={styles.container}>
       <Text style={styles.heading}>Todo List</Text>
       <View style={styles.inputContainer}>
@@ -51,6 +54,7 @@ function TodoForm() {
         </View>
       ))}
     </View>
+    </ScrollView>
   );
 }
 
